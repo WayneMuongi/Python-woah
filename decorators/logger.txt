@@ -1,0 +1,4 @@
+Hello China 
+Hello China 20 
+function:counter time taken 11.585827827453613 seconds function:counter time taken 11.585827827453613 seconds 
+function:sum time taken 0.00013017654418945312 seconds function:sum time taken 0.00013017654418945312 seconds 
