@@ -1,60 +1,78 @@
 
-#initializer:constructor
 
-#Speical method in a class
-#initializer: method is called whenver the blueprint is used
-#To create an object
-#method function is inside a class
+class Rectangle():
 
-#method your create you have to hhave thhe self: keyworkd
+    def __init__(self,length,width):
+        
+        #length and width hhave to be a number
+        if not isinstance(length,(int,float)):
+            raise TypeError(f"Exptected a number, got {type(length)}")
+        
+        if not isinstance(width,(int,float)):
+            raise TypeError(f"Exptected a number, got {type(width)}")
+        
+        self._length=length
+        self._width=width
 
-#how to create a class <-->What a class is
-# initialiZer <constrocture>
-# self key what it is :<this>
+    
+    @property
+    def length(self):
+        return self._length
 
-from datetime import datetime
-
-def write_file(f_name,txt):
-    with open(f_name,'a') as file:
-        file.write(f"{txt} \n")
-       
-
-class Human():
-
-    def __init__(self,gender,name):
-        print("The initializer was called")
-        self.gender=gender
-        self._name=name
-        if self.gender=="Male":
-            self.ribs=24
-            self.curse="Suffer"
-        else :
-          self.ribs=23
-          self.curse="Pain"
+    @length.setter
+    def length(self,new_length):
+        if not isinstance(new_length,(int,float)):
+            #raise TypeError(f"Exptected a number, got {type(new_length)}")
+            print("length is not a number")
+            return
+        self._length=new_length
 
     @property
-    def get_name(self):
-        now = datetime.now()
-        print("Curreent date and time",now)
-        write_file(f_name="log.txt",txt=f"At {now} got name from adam")
-        return self._name
+    def width(self):
+        return self._width
     
-  
-    def print_self(self):
-        print("----------------------")
-        print("name",self.name)
-        print("gender",self.gender)
-        print("ribs",self.ribs)
-        print("curse",self.curse)
-        print("---------------------")
+    @width.setter
+    def width(self,new_width):
+        #type of
+       
+        if not isinstance(new_width,(int,float)):
+            #raise TypeError(f"Exptected a number, got {type(new_width)}")
+            print("width is not a number")
+            return
+        self._width=new_width
+
+    def area(self):
+        return self._length*self._width
+    
+    def perimeter(self):
+        return (2*self._length)+(2*self._width)
+    
+    def info(self):
+        print("-------------------------")
+        print("Shape is rectange")
+        print("Length is",self._length)
+        print("Width",self._width)
+        print("Area",self.area())
+        print("Perimeter",self.perimeter())
+        print("-------------------------")
+
+r1=Rectangle(length=30,width=12)
+        
+r1.info()
+
+r1.length="hello world"
+r1.info()
+
+r1.length=80
+r1.info()
+
+## 800---> 
+### Millions 5years -> 
+## Juniour Developer
+## r1.length="strting"
 
 
-# adam=Human(name="adam",gender="Male") #object from a class
-adam=Human(name="adam",gender="Male")
-
-#Getter a property of: <name>:
-# print(adam.name)
-
-print(adam.get_name)
-
-# @property
+## OBJECT ORIENTED PROGRAMM
+## OOP---> encapsulation
+### ooop-> 
+### python function---> 
