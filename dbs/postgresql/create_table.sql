@@ -1,0 +1,8 @@
+
+CREATE TABLE student1(
+    id SERIAL PRIMARY KEY
+);
+
+CREATE TABLE parent2(
+    id SERIAL PRIMARY KEY
+);
